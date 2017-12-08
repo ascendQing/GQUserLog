@@ -1,0 +1,25 @@
+PODS:
+  - CocoaLumberjack (3.2.0):
+    - CocoaLumberjack/Default (= 3.2.0)
+    - CocoaLumberjack/Extensions (= 3.2.0)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Extensions (3.2.0):
+    - CocoaLumberjack/Default
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - SSZipArchive (1.8.1)
+
+DEPENDENCIES:
+  - CocoaLumberjack
+  - FMDB
+  - SSZipArchive
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  SSZipArchive: 04547dfa448be5ed7ecbaf7eaf8a6e9eb9b42997
+
+PODFILE CHECKSUM: 57006d01b8bdc8a68af02bf17c2e0b160ac94b5a
+
+COCOAPODS: 1.0.1

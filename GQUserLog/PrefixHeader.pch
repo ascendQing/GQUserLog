@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  GQUserLog
+//
+//  Created by qing on 2017/9/22.
+//  Copyright © 2017年 YCC. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//log
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "XZDynamicLogLevel.h"
+
+#ifdef LOG_LEVEL_DEF
+#   undef LOG_LEVEL_DEF
+#endif
+#define LOG_LEVEL_DEF [XZDynamicLogLevel ddLogLevel]
+
+
+#pragma mark - ----------------------沙盒路径----------------------------
+
+#define CACHE_PATH NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject
+#define DOCUMENTS_PATH NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject
+
+
+#define oyToStr(desStr)             [NSString stringWithFormat:@"%@",desStr]
+
+#define USERID @"18"
+
+
+#endif /* PrefixHeader_pch */

@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "XZLogger.h"
+#import "XZLogFormatter.h"
+#import "XZDynamicLogLevel.h"
+#import "XZUserLogManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 启动日志
+    //delete out of date log.
+    [[XZUserLogManager shareInstance] deleteOutOfDateLog];
+    // 添加DDASLLogger，你的日志语句将被发送到Xcode控制台
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    // 添加DDTTYLogger，你的日志语句将被发送到Console.app
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    
+    XZLogger *logger = [[XZLogger alloc] init];
+    [logger setLogFormatter:[[XZLogFormatter alloc] init]];
+    [DDLog addLogger:logger];
+    
+    DDLogInfo(@"%@",DOCUMENTS_PATH);
+    DDLogInfo(@"打印info");
+    DDLogWarn(@"打印Warn");
+    DDLogError(@"打印Error");
+    
     return YES;
 }
 
